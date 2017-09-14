@@ -1,0 +1,5 @@
+D:\Albert\Git\Billing\Billing\BLL\bin\Debug\BLL.dll
+D:\Albert\Git\Billing\Billing\BLL\bin\Debug\BLL.pdb
+D:\Albert\Git\Billing\Billing\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+D:\Albert\Git\Billing\Billing\BLL\obj\Debug\BLL.dll
+D:\Albert\Git\Billing\Billing\BLL\obj\Debug\BLL.pdb

@@ -1,0 +1,16 @@
+D:\Albert\Git\Billing\Billing\DAL\bin\Debug\DAL.dll.config
+D:\Albert\Git\Billing\Billing\DAL\bin\Debug\DAL.dll
+D:\Albert\Git\Billing\Billing\DAL\bin\Debug\DAL.pdb
+D:\Albert\Git\Billing\Billing\DAL\bin\Debug\EntityFramework.dll
+D:\Albert\Git\Billing\Billing\DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\Albert\Git\Billing\Billing\DAL\bin\Debug\IDAL.dll
+D:\Albert\Git\Billing\Billing\DAL\bin\Debug\Model.dll
+D:\Albert\Git\Billing\Billing\DAL\bin\Debug\IDAL.pdb
+D:\Albert\Git\Billing\Billing\DAL\bin\Debug\Model.pdb
+D:\Albert\Git\Billing\Billing\DAL\bin\Debug\EntityFramework.xml
+D:\Albert\Git\Billing\Billing\DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\Albert\Git\Billing\Billing\DAL\bin\Debug\zh-Hant\EntityFramework.resources.dll
+D:\Albert\Git\Billing\Billing\DAL\bin\Debug\zh-Hant\EntityFramework.SqlServer.resources.dll
+D:\Albert\Git\Billing\Billing\DAL\obj\Debug\MssqlDAL.csprojResolveAssemblyReference.cache
+D:\Albert\Git\Billing\Billing\DAL\obj\Debug\DAL.dll
+D:\Albert\Git\Billing\Billing\DAL\obj\Debug\DAL.pdb

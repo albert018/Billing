@@ -1,0 +1,99 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DD5F2D88-A3AE-023F-F271-811E52297999" name="DailyBilling">
+<createdBy>user</createdBy>
+<createdTime>2017-09-13 03:51:00 UTC</createdTime>
+<comment>每日流水帳</comment>
+<ownerDesignName>Billing</ownerDesignName>
+<ordsAlias>table_2</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Serial" id="44A0884D-5646-96C0-138A-649DC5A946C6">
+<createdBy>user</createdBy>
+<createdTime>2017-09-13 03:58:35 UTC</createdTime>
+<ownerDesignName>Billing</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>36 BYTE</dataTypeSize>
+<ownDataTypeParameters>36 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="BillDate" id="A3C0656B-40F9-B64A-B488-A8D1A57ED1B5">
+<createdBy>user</createdBy>
+<createdTime>2017-09-13 03:58:35 UTC</createdTime>
+<ownerDesignName>Billing</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Amount" id="B6A54712-E10B-430A-BC76-4954D71C4951">
+<createdBy>user</createdBy>
+<createdTime>2017-09-13 03:58:35 UTC</createdTime>
+<ownerDesignName>Billing</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>14</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<usesDefaultValue>true</usesDefaultValue>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,14,4</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="BillType" id="04BFC50B-4C6F-E537-0DE7-F1771190312F">
+<createdBy>user</createdBy>
+<createdTime>2017-09-13 03:58:35 UTC</createdTime>
+<ownerDesignName>Billing</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="BillTag" id="022AE817-F969-4272-7DA5-832CEB350253">
+<createdBy>user</createdBy>
+<createdTime>2017-09-13 03:58:35 UTC</createdTime>
+<ownerDesignName>Billing</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Remark" id="F38BD7C4-86A3-DF07-AE77-EE183D542C17">
+<createdBy>user</createdBy>
+<createdTime>2017-09-13 03:58:35 UTC</createdTime>
+<ownerDesignName>Billing</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>100 BYTE</dataTypeSize>
+<ownDataTypeParameters>100 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="8C6DDD7C-4427-3B95-DD0F-5140F4EBDDF6" name="DailyBilling_PK">
+<createdBy>user</createdBy>
+<createdTime>2017-09-13 03:58:35 UTC</createdTime>
+<ownerDesignName>Billing</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="44A0884D-5646-96C0-138A-649DC5A946C6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

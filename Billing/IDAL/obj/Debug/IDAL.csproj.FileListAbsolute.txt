@@ -1,0 +1,10 @@
+D:\Albert\Git\Billing\Billing\IDAL\bin\Debug\IDAL.dll
+D:\Albert\Git\Billing\Billing\IDAL\bin\Debug\IDAL.pdb
+D:\Albert\Git\Billing\Billing\IDAL\bin\Debug\Model.dll
+D:\Albert\Git\Billing\Billing\IDAL\bin\Debug\EntityFramework.dll
+D:\Albert\Git\Billing\Billing\IDAL\bin\Debug\Model.pdb
+D:\Albert\Git\Billing\Billing\IDAL\bin\Debug\EntityFramework.xml
+D:\Albert\Git\Billing\Billing\IDAL\bin\Debug\zh-Hant\EntityFramework.resources.dll
+D:\Albert\Git\Billing\Billing\IDAL\obj\Debug\IDAL.csprojResolveAssemblyReference.cache
+D:\Albert\Git\Billing\Billing\IDAL\obj\Debug\IDAL.dll
+D:\Albert\Git\Billing\Billing\IDAL\obj\Debug\IDAL.pdb
