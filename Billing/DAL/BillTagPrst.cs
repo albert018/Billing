@@ -8,7 +8,7 @@ using Model;
 
 namespace MssqlDAL
 {
-    class BillTagPrst : IBillTagPrst
+    public class BillTagPrst : IBillTagPrst
     {
         private BillingEntities _BillEntities;
         public BillTagPrst()
