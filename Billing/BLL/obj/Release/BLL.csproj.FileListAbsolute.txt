@@ -1,0 +1,14 @@
+D:\Albert\Git\Billing\Billing\BLL\bin\Release\BLL.dll
+D:\Albert\Git\Billing\Billing\BLL\bin\Release\BLL.pdb
+D:\Albert\Git\Billing\Billing\BLL\bin\Release\IDAL.dll
+D:\Albert\Git\Billing\Billing\BLL\bin\Release\Model.dll
+D:\Albert\Git\Billing\Billing\BLL\bin\Release\MssqlDAL.dll
+D:\Albert\Git\Billing\Billing\BLL\bin\Release\EntityFramework.dll
+D:\Albert\Git\Billing\Billing\BLL\bin\Release\MssqlDAL.pdb
+D:\Albert\Git\Billing\Billing\BLL\bin\Release\IDAL.pdb
+D:\Albert\Git\Billing\Billing\BLL\bin\Release\Model.pdb
+D:\Albert\Git\Billing\Billing\BLL\bin\Release\EntityFramework.xml
+D:\Albert\Git\Billing\Billing\BLL\bin\Release\zh-Hant\EntityFramework.resources.dll
+D:\Albert\Git\Billing\Billing\BLL\obj\Release\BLL.csprojResolveAssemblyReference.cache
+D:\Albert\Git\Billing\Billing\BLL\obj\Release\BLL.dll
+D:\Albert\Git\Billing\Billing\BLL\obj\Release\BLL.pdb

@@ -9,3 +9,4 @@ D:\Albert\Git\Billing\Billing\Model\bin\Debug\zh-Hant\EntityFramework.resources.
 D:\Albert\Git\Billing\Billing\Model\bin\Debug\zh-Hant\EntityFramework.SqlServer.resources.dll
 D:\Albert\Git\Billing\Billing\Model\obj\Debug\Model.dll
 D:\Albert\Git\Billing\Billing\Model\obj\Debug\Model.pdb
+D:\Albert\Git\Billing\Billing\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache

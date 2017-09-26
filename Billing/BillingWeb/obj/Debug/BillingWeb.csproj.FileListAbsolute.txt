@@ -86,3 +86,8 @@ D:\Albert\Git\Billing\Billing\BillingWeb\bin\zh-Hant\Microsoft.Owin.Security.Mic
 D:\Albert\Git\Billing\Billing\BillingWeb\obj\Debug\BillingWeb.csprojResolveAssemblyReference.cache
 D:\Albert\Git\Billing\Billing\BillingWeb\obj\Debug\BillingWeb.dll
 D:\Albert\Git\Billing\Billing\BillingWeb\obj\Debug\BillingWeb.pdb
+D:\Albert\Git\Billing\Billing\BillingWeb\bin\Model.dll
+D:\Albert\Git\Billing\Billing\BillingWeb\bin\Model.pdb
+D:\Albert\Git\Billing\Billing\BillingWeb\bin\System.Net.Http.Formatting.dll
+D:\Albert\Git\Billing\Billing\BillingWeb\bin\System.Net.Http.Formatting.xml
+D:\Albert\Git\Billing\Billing\BillingWeb\bin\zh-Hant\System.Net.Http.Formatting.resources.dll

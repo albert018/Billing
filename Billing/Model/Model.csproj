@@ -76,11 +76,10 @@
     <Compile Include="DailyBilling.cs">
       <DependentUpon>Billing.tt</DependentUpon>
     </Compile>
+    <Compile Include="Meta\BillTag.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="MetaAndPartial\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
     <EntityDeploy Include="Billing.edmx">

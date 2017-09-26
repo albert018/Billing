@@ -1,0 +1,21 @@
+﻿@model IEnumerable< Model.BillTag>
+
+@{
+    ViewBag.Title = "BillTag";
+}
+
+<h2>BillTagQuery</h2>
+
+<table>
+    <tr>
+        <th>BillTagName</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>
+                @Html.ActionLink(x.BillTagName, "Details", new { id = x.BillTagName })
+            </td>
+        </tr>
+    }
+</table>

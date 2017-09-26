@@ -1,0 +1,34 @@
+﻿@model Model.BillTag
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>BillTagDetail</title>
+</head>
+<body>
+    <div>
+        <h4>BillTag</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.BillTagName)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.BillTagName)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.BillTagName } ) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

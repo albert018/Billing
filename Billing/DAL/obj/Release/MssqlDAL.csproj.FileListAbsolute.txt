@@ -1,0 +1,16 @@
+D:\Albert\Git\Billing\Billing\DAL\bin\Release\MssqlDAL.dll.config
+D:\Albert\Git\Billing\Billing\DAL\bin\Release\MssqlDAL.dll
+D:\Albert\Git\Billing\Billing\DAL\bin\Release\MssqlDAL.pdb
+D:\Albert\Git\Billing\Billing\DAL\bin\Release\EntityFramework.dll
+D:\Albert\Git\Billing\Billing\DAL\bin\Release\EntityFramework.SqlServer.dll
+D:\Albert\Git\Billing\Billing\DAL\bin\Release\IDAL.dll
+D:\Albert\Git\Billing\Billing\DAL\bin\Release\Model.dll
+D:\Albert\Git\Billing\Billing\DAL\bin\Release\IDAL.pdb
+D:\Albert\Git\Billing\Billing\DAL\bin\Release\Model.pdb
+D:\Albert\Git\Billing\Billing\DAL\bin\Release\EntityFramework.xml
+D:\Albert\Git\Billing\Billing\DAL\bin\Release\EntityFramework.SqlServer.xml
+D:\Albert\Git\Billing\Billing\DAL\bin\Release\zh-Hant\EntityFramework.resources.dll
+D:\Albert\Git\Billing\Billing\DAL\bin\Release\zh-Hant\EntityFramework.SqlServer.resources.dll
+D:\Albert\Git\Billing\Billing\DAL\obj\Release\MssqlDAL.csprojResolveAssemblyReference.cache
+D:\Albert\Git\Billing\Billing\DAL\obj\Release\MssqlDAL.dll
+D:\Albert\Git\Billing\Billing\DAL\obj\Release\MssqlDAL.pdb

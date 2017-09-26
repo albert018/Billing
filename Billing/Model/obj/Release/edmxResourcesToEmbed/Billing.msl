@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BillingModelStoreContainer" CdmEntityContainer="BillingEntities">
+    <EntitySetMapping Name="BillTag">
+      <EntityTypeMapping TypeName="BillingModel.BillTag">
+        <MappingFragment StoreEntitySet="BillTag">
+          <ScalarProperty Name="BillTagName" ColumnName="BillTagName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BillType">
+      <EntityTypeMapping TypeName="BillingModel.BillType">
+        <MappingFragment StoreEntitySet="BillType">
+          <ScalarProperty Name="BillTypeName" ColumnName="BillTypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DailyBilling">
+      <EntityTypeMapping TypeName="BillingModel.DailyBilling">
+        <MappingFragment StoreEntitySet="DailyBilling">
+          <ScalarProperty Name="Serial" ColumnName="Serial" />
+          <ScalarProperty Name="BillDate" ColumnName="BillDate" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="BillType" ColumnName="BillType" />
+          <ScalarProperty Name="BillTag" ColumnName="BillTag" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

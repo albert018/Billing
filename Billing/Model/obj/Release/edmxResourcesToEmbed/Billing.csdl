@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BillingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BillTag">
+    <Key>
+      <PropertyRef Name="BillTagName" />
+    </Key>
+    <Property Name="BillTagName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BillType">
+    <Key>
+      <PropertyRef Name="BillTypeName" />
+    </Key>
+    <Property Name="BillTypeName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DailyBilling">
+    <Key>
+      <PropertyRef Name="Serial" />
+    </Key>
+    <Property Name="Serial" Type="String" MaxLength="36" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BillDate" Type="DateTime" Precision="0" />
+    <Property Name="Amount" Type="Decimal" Precision="14" Scale="4" />
+    <Property Name="BillType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="BillTag" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Remark" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="BillingEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BillTag" EntityType="Self.BillTag" />
+    <EntitySet Name="BillType" EntityType="Self.BillType" />
+    <EntitySet Name="DailyBilling" EntityType="Self.DailyBilling" />
+  </EntityContainer>
+</Schema>

@@ -64,13 +64,13 @@ namespace MssqlDAL
             return result;
         }
 
-        public string Update(BillTag v_OldValue, BillTag v_NewValue)
+        public string Update(string v_sBillTagName, BillTag v_NewValue)
         {
             string sMsg = "";
             try
             {
                 var objTemp = (from x in _BillEntities.BillTag
-                               where x.BillTagName == v_OldValue.BillTagName
+                               where x.BillTagName == v_sBillTagName
                                select x).First();
                 objTemp.BillTagName = v_NewValue.BillTagName;
                 _BillEntities.SaveChanges();
