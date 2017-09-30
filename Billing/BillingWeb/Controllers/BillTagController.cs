@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Web;
 using System.Web.Mvc;
+using System.Net.Http.Formatting;
 using Newtonsoft.Json;
 using Model;
 
@@ -17,7 +18,7 @@ namespace BillingWeb.Controllers
         public BillTagController()
         {
             _sApiAddress = Helper.GetConfig(Helper.ConfigName.WebAPI);
-            _sApiURI = "BillingWebAPI/API/BillTag";
+            _sApiURI = Helper.GetConfig(Helper.ConfigName.ApiURI)+"/BillTag";
         }
 
         // GET: BillTag
@@ -51,71 +52,44 @@ namespace BillingWeb.Controllers
         // GET: BillTag/Create
         public ActionResult Create()
         {
-            return View();
+            return View("BillTagCreate");
         }
 
         // POST: BillTag/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: BillTag/Edit/5
-        public ActionResult Edit(string id)
+        public ActionResult Create(BillTag v_Value)
         {
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri(_sApiAddress);
-                var response = client.GetAsync(string.Format(_sApiURI + "/{0}", id)).Result;
-                if (response.IsSuccessStatusCode)
-                    return View("BillTagEdit", JsonConvert.DeserializeObject<BillTag>(response.Content.ReadAsStringAsync().Result));
-                else
-                    return View("BillTagEdit");
+                var response = client.PostAsJsonAsync(_sApiURI, v_Value).Result;
+                //var response = client.PostAsync<BillTag>(_sApiURI, v_Value, new JsonMediaTypeFormatter());
+                return RedirectToAction("Index");
             }
         }
 
         // POST: BillTag/Edit/5
-        [HttpPost]
-        public ActionResult Edit(BillTag Model)
+        //public ActionResult Edit(BillTag Model)
+        //{
+        //    using (var client = new HttpClient())
+        //    {
+        //        client.BaseAddress = new Uri(_sApiAddress);
+        //        var response = client.PutAsJsonAsync<BillTag>(_sApiURI, Model).Result;
+        //        return RedirectToAction("Index");
+        //    }
+        //}
+
+        // GET: BillTag/Delete/5
+        public ActionResult Delete(string Id)
         {
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri(_sApiAddress);
-                var response = client.PutAsJsonAsync<BillTag>(_sApiURI, Model).Result;
+                var response = client.DeleteAsync(string.Format(_sApiURI + "/{0}", Id)).Result;
                 return RedirectToAction("Index");
             }
         }
 
-        // GET: BillTag/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: BillTag/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
+        
     }
 }

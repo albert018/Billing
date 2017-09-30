@@ -31,13 +31,13 @@ namespace MssqlDAL
             return sMsg;
         }
 
-        public string Delete(BillType v_Value)
+        public string Delete(string v_Value)
         {
             string sMsg = "";
             try
             {
                 var objTemp = (from x in _BillEntities.BillType
-                               where x.BillTypeName == v_Value.BillTypeName
+                               where x.BillTypeName == v_Value
                                select x).First();
                 _BillEntities.BillType.Remove(objTemp);
                 _BillEntities.SaveChanges();
@@ -64,22 +64,22 @@ namespace MssqlDAL
             return result;
         }
 
-        public string Update(BillType v_OldValue, BillType v_NewValue)
-        {
-            string sMsg = "";
-            try
-            {
-                var objTemp = (from x in _BillEntities.BillType
-                               where x.BillTypeName == v_OldValue.BillTypeName
-                               select x).First();
-                objTemp.BillTypeName = v_NewValue.BillTypeName;
-                _BillEntities.SaveChanges();
-            }
-            catch (Exception ex)
-            {
-                sMsg = ex.Message;
-            }
-            return sMsg;
-        }
+        //public string Update(BillType v_OldValue, BillType v_NewValue)
+        //{
+        //    string sMsg = "";
+        //    try
+        //    {
+        //        var objTemp = (from x in _BillEntities.BillType
+        //                       where x.BillTypeName == v_OldValue.BillTypeName
+        //                       select x).First();
+        //        objTemp.BillTypeName = v_NewValue.BillTypeName;
+        //        _BillEntities.SaveChanges();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        sMsg = ex.Message;
+        //    }
+        //    return sMsg;
+        //}
     }
 }

@@ -21,28 +21,30 @@ namespace BusinessService.Controllers
         }
 
         // GET api/<controller>/5
-        public BillTag Get(string id)
+        public BillTag Get(string Id)
         {
-            return _BillTag.QueryByName(id);
+            return _BillTag.QueryByName(Id);
         }
 
         // POST api/<controller>
-        public string Post(BillTag v_Value)
+        public string Post(BillTag Value)
         {
-            
-            return _BillTag.Create(v_Value);
+            return _BillTag.Create(Value);
         }
 
         // PUT api/<controller>/5
-        public string Put(string v_sBillTagName, BillTag v_NewValue)
-        {
-            return _BillTag.Updte(v_sBillTagName, v_NewValue);
-        }
+        //public string Put(string v_sBillTagName)
+        //{
+        //    var NewValue = new BillTag();
+        //    NewValue = this.Request.Content.ReadAsAsync<BillTag>().Result;
+        //    return _BillTag.Updte(v_sBillTagName, NewValue);
+        //}
 
         // DELETE api/<controller>/5
-        public string Delete(BillTag v_Value)
+        public string Delete(string Id)
         {
-            return _BillTag.Delete(v_Value);
+            return _BillTag.Delete(Id);
         }
+
     }
 }

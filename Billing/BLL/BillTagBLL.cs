@@ -11,7 +11,7 @@ namespace BLL
 {
     public class BillTagBLL
     {
-        IBillTagPrst _DAL = new BillTagPrst();
+        IBillTagPrst _DAL = Factory.GetBillTagPrst();
 
         public string Create(BillTag v_Value)
         {
@@ -28,12 +28,12 @@ namespace BLL
             return _DAL.QueryAll();
         }
 
-        public string Updte(string v_sBillTagName, BillTag v_NewValue)
-        {
-            return _DAL.Update(v_sBillTagName, v_NewValue);
-        }
+        //public string Updte(string v_sBillTagName, BillTag v_NewValue)
+        //{
+        //    return _DAL.Update(v_sBillTagName, v_NewValue);
+        //}
 
-        public string Delete(BillTag v_Value)
+        public string Delete(string v_Value)
         {
             return _DAL.Delete(v_Value);
         }

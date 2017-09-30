@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="BillTagPrst.cs" />
     <Compile Include="BillTypePrst.cs" />
+    <Compile Include="DailyBillingPrst.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -91,3 +91,7 @@ D:\Albert\Git\Billing\Billing\BillingWeb\bin\Model.pdb
 D:\Albert\Git\Billing\Billing\BillingWeb\bin\System.Net.Http.Formatting.dll
 D:\Albert\Git\Billing\Billing\BillingWeb\bin\System.Net.Http.Formatting.xml
 D:\Albert\Git\Billing\Billing\BillingWeb\bin\zh-Hant\System.Net.Http.Formatting.resources.dll
+D:\Albert\Git\Billing\Billing\BillingWeb\bin\Autofac.dll
+D:\Albert\Git\Billing\Billing\BillingWeb\bin\Autofac.Integration.Mvc.dll
+D:\Albert\Git\Billing\Billing\BillingWeb\bin\Autofac.xml
+D:\Albert\Git\Billing\Billing\BillingWeb\bin\Autofac.Integration.Mvc.xml

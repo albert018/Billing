@@ -12,7 +12,7 @@ namespace IDAL
         string Create(BillType v_Value);
         BillType QueryByName(string v_Value);
         IQueryable<BillType> QueryAll();
-        string Update(BillType v_OldValue, BillType v_NewValue);
-        string Delete(BillType v_Value);
+        //string Update(BillType v_OldValue, BillType v_NewValue);
+        string Delete(string v_Value);
     }
 }

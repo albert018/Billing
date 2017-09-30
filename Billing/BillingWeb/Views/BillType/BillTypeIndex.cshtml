@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Model.BillType>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>BillTypeIndex</title>
+</head>
+<body>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(m => m.BillTypeName);
+            </th>
+        </tr>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>
+                    @x.BillTypeName
+                    @Html.ActionLink("Detail", "Details", new { id = x.BillTypeName });
+                </td>
+            </tr>
+        }
+    </table>
+    @Html.ActionLink("Create", "Create");
+</body>
+</html>

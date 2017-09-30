@@ -1,6 +1,6 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <oracle.dbtools.crest.model.design.relational.RelationalDesign>
-   <object objectType="Table" objectID="BC6BD5B6-081F-471C-D661-CB9EB15F7773" name="BillTag" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.relational.Table" propertyParentId="BB211061-4A3C-3D3F-3602-1A1D080D7D70" propertySourceId="" propertyTargetId=""/>
    <object objectType="Table" objectID="8CFF91A7-178A-E491-DEC4-7D75B2FF6CFD" name="BillType" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.relational.Table" propertyParentId="BB211061-4A3C-3D3F-3602-1A1D080D7D70" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Table" objectID="BC6BD5B6-081F-471C-D661-CB9EB15F7773" name="BillTag" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.relational.Table" propertyParentId="BB211061-4A3C-3D3F-3602-1A1D080D7D70" propertySourceId="" propertyTargetId=""/>
    <object objectType="Table" objectID="DD5F2D88-A3AE-023F-F271-811E52297999" name="DailyBilling" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.relational.Table" propertyParentId="BB211061-4A3C-3D3F-3602-1A1D080D7D70" propertySourceId="" propertyTargetId=""/>
 </oracle.dbtools.crest.model.design.relational.RelationalDesign>

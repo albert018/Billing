@@ -12,3 +12,5 @@ D:\Albert\Git\Billing\Billing\BLL\bin\Release\zh-Hant\EntityFramework.resources.
 D:\Albert\Git\Billing\Billing\BLL\obj\Release\BLL.csprojResolveAssemblyReference.cache
 D:\Albert\Git\Billing\Billing\BLL\obj\Release\BLL.dll
 D:\Albert\Git\Billing\Billing\BLL\obj\Release\BLL.pdb
+D:\Albert\Git\Billing\Billing\BLL\bin\Release\Autofac.dll
+D:\Albert\Git\Billing\Billing\BLL\bin\Release\Autofac.xml

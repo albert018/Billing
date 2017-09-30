@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="IBillTagPrst.cs" />
     <Compile Include="IBillTypePrst.cs" />
+    <Compile Include="IDailyBillingPrst.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

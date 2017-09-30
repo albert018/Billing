@@ -11,6 +11,7 @@ namespace BillingWeb
         public class ConfigName
         {
             public static string WebAPI = "WebAPI";
+            public static string ApiURI = "ApiURI";
         }
 
         public static string GetConfig(string v_sValue)

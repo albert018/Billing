@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Model.DailyBilling>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DailyBillingIndex</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(x => x.Serial);
+            </th>
+            <th>
+                @Html.DisplayNameFor(x => x.BillDate);
+            </th>
+            <th>
+                @Html.DisplayNameFor(x => x.Amount);
+            </th>
+            <th>
+                @Html.DisplayNameFor(x => x.BillType);
+            </th>
+            <th>
+                @Html.DisplayNameFor(x => x.BillTag);
+            </th>
+            <th>
+                @Html.DisplayNameFor(x => x.Remark);
+            </th>
+        </tr>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>
+                    @x.Serial;
+                </td>
+                <td>
+                    @x.BillDate;
+                </td>
+                <td>
+                    @x.Amount;
+                </td>
+                <td>
+                    @x.BillType;
+                </td>
+                <td>
+                    @x.BillTag;
+                </td>
+                <td>
+                    @x.Remark;
+                </td>
+                <td>
+                    @Html.ActionLink("Detail", "Details", new { id = x.Serial })
+                </td>
+            </tr>
+        }
+    </table>
+    @Html.ActionLink("Create", "Create");
+</body>
+</html>

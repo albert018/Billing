@@ -1,0 +1,74 @@
+﻿@model Model.DailyBilling
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DailyBillingDetail</title>
+</head>
+<body>
+    <div>
+        <h4>DailyBilling</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Serial)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Serial)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.BillDate)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.BillDate)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Amount)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Amount)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.BillType)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.BillType)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.BillTag)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.BillTag)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Remark)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Remark)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id= Model.Serial }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>
