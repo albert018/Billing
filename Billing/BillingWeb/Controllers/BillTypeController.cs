@@ -27,8 +27,10 @@ namespace BillingWeb.Controllers
             {
                 client.BaseAddress = new Uri(_sApiAddress);
                 var response = client.GetAsync(_sApiURI).Result;
-                return View("BillTypeIndex",
-                    JsonConvert.DeserializeObject<IEnumerable<BillType>>(response.Content.ReadAsStringAsync().Result));
+                if (response.IsSuccessStatusCode)
+                    return View("BillTypeIndex", response.Content.ReadAsAsync<IEnumerable<BillType>>().Result);
+                else
+                    return View("Error", Helper.GetHandleErrorInfo(response, "BillType", "Index"));
             }
         }
 
@@ -39,8 +41,10 @@ namespace BillingWeb.Controllers
             {
                 client.BaseAddress = new Uri(_sApiAddress);
                 var response = client.GetAsync(string.Format(_sApiURI + "/{0}",id)).Result;
-                return View("BillTypeDetail",
-                    JsonConvert.DeserializeObject<BillType>(response.Content.ReadAsStringAsync().Result));
+                if (response.IsSuccessStatusCode)
+                    return View("BillTypeDetail", response.Content.ReadAsAsync<BillType>().Result);
+                else
+                    return View("Error", Helper.GetHandleErrorInfo(response, "BillType", "Details"));
             }
         }
 
@@ -57,7 +61,10 @@ namespace BillingWeb.Controllers
             {
                 client.BaseAddress = new Uri(_sApiAddress);
                 var response = client.PostAsJsonAsync(_sApiURI, v_Value).Result;
-                return RedirectToAction("Index");
+                if(response.IsSuccessStatusCode)
+                    return RedirectToAction("Index");
+                else
+                    return View("Error", Helper.GetHandleErrorInfo(response, "BillType", "Create"));
             }
         }
 
@@ -68,7 +75,10 @@ namespace BillingWeb.Controllers
             {
                 client.BaseAddress = new Uri(_sApiAddress);
                 var response = client.DeleteAsync(string.Format(_sApiURI + "/{0}", id)).Result;
-                return RedirectToAction("Index");
+                if(response.IsSuccessStatusCode)
+                    return RedirectToAction("Index");
+                else
+                    return View("Error", Helper.GetHandleErrorInfo(response, "BillType", "Delete"));
             }
         }
     }

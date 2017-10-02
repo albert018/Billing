@@ -15,35 +15,43 @@ namespace BusinessService.Controllers
         BillTagBLL _BillTag = new BillTagBLL();
 
         // GET api/<controller>
-        public IEnumerable<BillTag> Get()
+        public HttpResponseMessage Get()
         {
-            return _BillTag.QueryAll();
+            var Result = _BillTag.QueryAll();
+            if (Result == null)
+                return Request.CreateResponse(HttpStatusCode.BadRequest, "There is no data");
+            else
+                return Request.CreateResponse(HttpStatusCode.OK,Result);
         }
 
         // GET api/<controller>/5
-        public BillTag Get(string Id)
+        public HttpResponseMessage Get(string Id)
         {
-            return _BillTag.QueryByName(Id);
+            var Result = _BillTag.QueryByName(Id);
+            if (Result == null)
+                return Request.CreateResponse(HttpStatusCode.BadRequest, "The data not found");
+            else
+                return Request.CreateResponse(HttpStatusCode.OK, Result);
         }
 
         // POST api/<controller>
-        public string Post(BillTag Value)
+        public HttpResponseMessage Post(BillTag Value)
         {
-            return _BillTag.Create(Value);
+            string sMsg = _BillTag.Create(Value);
+            if (sMsg == "")
+                return Request.CreateResponse(HttpStatusCode.Created);
+            else
+                return Request.CreateResponse(HttpStatusCode.BadRequest, sMsg);
         }
 
-        // PUT api/<controller>/5
-        //public string Put(string v_sBillTagName)
-        //{
-        //    var NewValue = new BillTag();
-        //    NewValue = this.Request.Content.ReadAsAsync<BillTag>().Result;
-        //    return _BillTag.Updte(v_sBillTagName, NewValue);
-        //}
-
         // DELETE api/<controller>/5
-        public string Delete(string Id)
+        public HttpResponseMessage Delete(string Id)
         {
-            return _BillTag.Delete(Id);
+            string sMsg= _BillTag.Delete(Id);
+            if (sMsg == "")
+                return Request.CreateResponse(HttpStatusCode.Created);
+            else
+                return Request.CreateResponse(HttpStatusCode.BadRequest, sMsg);
         }
 
     }

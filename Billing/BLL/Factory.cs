@@ -26,7 +26,11 @@ namespace BLL
 
         public static IBillTagPrst GetBillTagPrst()
         {
-            return _Container.Resolve<IBillTagPrst>();
+            using (var scope = _Container.BeginLifetimeScope())
+            {
+                //return _Container.Resolve<IBillTagPrst>();
+                return scope.Resolve<IBillTagPrst>();
+            }
         }
 
         public static IBillTypePrst GetBillTypePrst()

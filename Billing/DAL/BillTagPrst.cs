@@ -63,23 +63,5 @@ namespace MssqlDAL
                           select x).FirstOrDefault();
             return result;
         }
-
-        //public string Update(string v_sBillTagName, BillTag v_NewValue)
-        //{
-        //    string sMsg = "";
-        //    try
-        //    {
-        //        var objTemp = (from x in _BillEntities.BillTag
-        //                       where x.BillTagName == v_sBillTagName
-        //                       select x).First();
-        //        objTemp.BillTagName = v_NewValue.BillTagName;
-        //        _BillEntities.SaveChanges();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        sMsg = ex.Message;
-        //    }
-        //    return sMsg;
-        //}
     }
 }

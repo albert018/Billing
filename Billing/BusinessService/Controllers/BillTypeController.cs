@@ -14,33 +14,43 @@ namespace BusinessService.Controllers
         BillTypeBLL _BLL = new BillTypeBLL();
 
         // GET: api/BillType
-        public IEnumerable<BillType> Get()
+        public HttpResponseMessage Get()
         {
-            return _BLL.QueryAll();
+            var Result = _BLL.QueryAll();
+            if (Result == null)
+                return Request.CreateResponse(HttpStatusCode.BadRequest, "There is no data");
+            else
+                return Request.CreateResponse(HttpStatusCode.OK, Result);
         }
 
         // GET: api/BillType/5
-        public BillType Get(string id)
+        public HttpResponseMessage Get(string id)
         {
-            return _BLL.QueryByName(id);
+            var Result = _BLL.QueryByName(id);
+            if (Result == null)
+                return Request.CreateResponse(HttpStatusCode.BadRequest, "The data not found");
+            else
+                return Request.CreateResponse(HttpStatusCode.OK, Result);
         }
 
         // POST: api/BillType
-        public string Post(BillType Value)
+        public HttpResponseMessage Post(BillType Value)
         {
-            return _BLL.Create(Value);
+            string sMsg = _BLL.Create(Value);
+            if (sMsg == "")
+                return Request.CreateResponse(HttpStatusCode.Created);
+            else
+                return Request.CreateResponse(HttpStatusCode.BadRequest, sMsg);
         }
 
-        // PUT: api/BillType/5
-        //public void Put(int id, [FromBody]string value)
-        //{
-
-        //}
-
         // DELETE: api/BillType/5
-        public string Delete(string id)
+        public HttpResponseMessage Delete(string id)
         {
-            return _BLL.Delete(id);
+            string sMsg = _BLL.Delete(id);
+            if (sMsg == "")
+                return Request.CreateResponse(HttpStatusCode.Created);
+            else
+                return Request.CreateResponse(HttpStatusCode.BadRequest, sMsg);
         }
     }
 }

@@ -19,34 +19,54 @@ namespace BusinessService.Controllers
         }
 
         // GET: api/DailyBilling
-        public IEnumerable<DailyBilling> Get()
+        public HttpResponseMessage Get()
         {
-            return _BLL.QueryAll();
+            var Result = _BLL.QueryAll();
+            if (Result == null)
+                return Request.CreateResponse(HttpStatusCode.BadRequest, "There is no data");
+            else
+                return Request.CreateResponse(HttpStatusCode.OK, Result);
         }
 
         // GET: api/DailyBilling/5
-        public DailyBilling Get(string id)
+        public HttpResponseMessage Get(string id)
         {
-            return _BLL.QueryByName(id);
+            var Result = _BLL.QueryByName(id);
+            if (Result == null)
+                return Request.CreateResponse(HttpStatusCode.BadRequest, "The data not found");
+            else
+                return Request.CreateResponse(HttpStatusCode.OK, Result);
         }
 
         // POST: api/DailyBilling
-        public string Post(DailyBilling Value)
+        public HttpResponseMessage Post(DailyBilling Value)
         {
-            return _BLL.Create(Value);
+            string sMsg = _BLL.Create(Value);
+            if (sMsg == "")
+                return Request.CreateResponse(HttpStatusCode.Created);
+            else
+                return Request.CreateResponse(HttpStatusCode.BadRequest, sMsg);
         }
 
         // PUT: api/DailyBilling/5
-        public string Put(string id)
+        public HttpResponseMessage Put(string id)
         {
             var Value = Request.Content.ReadAsAsync<DailyBilling>().Result;
-            return _BLL.Updte(id, Value);
+            string sMsg = _BLL.Updte(id, Value);
+            if (sMsg == "")
+                return Request.CreateResponse(HttpStatusCode.OK);
+            else
+                return Request.CreateResponse(HttpStatusCode.BadRequest, sMsg);
         }
 
         // DELETE: api/DailyBilling/5
-        public string Delete(string id)
+        public HttpResponseMessage Delete(string id)
         {
-            return _BLL.Delete(id);
+            string sMsg = _BLL.Delete(id);
+            if (sMsg == "")
+                return Request.CreateResponse(HttpStatusCode.OK);
+            else
+                return Request.CreateResponse(HttpStatusCode.BadRequest, sMsg);
         }
     }
 }
