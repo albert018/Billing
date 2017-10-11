@@ -58,18 +58,6 @@
 <ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="BillTag" id="022AE817-F969-4272-7DA5-832CEB350253">
-<createdBy>user</createdBy>
-<createdTime>2017-09-13 03:58:35 UTC</createdTime>
-<ownerDesignName>Billing</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT037</logicalDatatype>
-<dataTypeSize>20 BYTE</dataTypeSize>
-<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
 <Column name="Remark" id="F38BD7C4-86A3-DF07-AE77-EE183D542C17">
 <createdBy>user</createdBy>
 <createdTime>2017-09-13 03:58:35 UTC</createdTime>

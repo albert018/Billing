@@ -18,11 +18,14 @@
     <File Include="bin/Autofac.Integration.WebApi.dll">
       <publishTime>07/12/2013 22:01:38</publishTime>
     </File>
+    <File Include="bin/AutoMapper.dll">
+      <publishTime>06/26/2017 20:07:14</publishTime>
+    </File>
     <File Include="bin/BLL.dll">
-      <publishTime>09/30/2017 14:44:23</publishTime>
+      <publishTime>10/07/2017 17:32:59</publishTime>
     </File>
     <File Include="bin/BusinessService.dll">
-      <publishTime>09/30/2017 14:44:26</publishTime>
+      <publishTime>10/07/2017 17:33:03</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>03/02/2015 09:32:26</publishTime>
@@ -31,7 +34,7 @@
       <publishTime>03/02/2015 09:32:26</publishTime>
     </File>
     <File Include="bin/IDAL.dll">
-      <publishTime>09/28/2017 23:09:04</publishTime>
+      <publishTime>10/07/2017 17:32:58</publishTime>
     </File>
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
       <publishTime>06/15/2015 02:06:24</publishTime>
@@ -40,10 +43,10 @@
       <publishTime>04/23/2012 15:23:58</publishTime>
     </File>
     <File Include="bin/Model.dll">
-      <publishTime>09/28/2017 23:09:04</publishTime>
+      <publishTime>10/07/2017 17:32:58</publishTime>
     </File>
     <File Include="bin/MssqlDAL.dll">
-      <publishTime>09/30/2017 14:44:23</publishTime>
+      <publishTime>10/07/2017 17:32:59</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
       <publishTime>08/03/2014 20:33:56</publishTime>
@@ -151,7 +154,7 @@
       <publishTime>09/30/2017 00:25:26</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>09/30/2017 01:00:06</publishTime>
+      <publishTime>10/07/2017 17:33:03</publishTime>
     </File>
   </ItemGroup>
 </Project>

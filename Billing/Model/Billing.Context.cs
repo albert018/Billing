@@ -28,5 +28,6 @@ namespace Model
         public virtual DbSet<BillTag> BillTag { get; set; }
         public virtual DbSet<BillType> BillType { get; set; }
         public virtual DbSet<DailyBilling> DailyBilling { get; set; }
+        public virtual DbSet<DailyBillingTags> DailyBillingTags { get; set; }
     }
 }

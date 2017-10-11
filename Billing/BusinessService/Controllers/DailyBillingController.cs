@@ -39,7 +39,7 @@ namespace BusinessService.Controllers
         }
 
         // POST: api/DailyBilling
-        public HttpResponseMessage Post(DailyBilling Value)
+        public HttpResponseMessage Post(DailyBillingDTO Value)
         {
             string sMsg = _BLL.Create(Value);
             if (sMsg == "")
@@ -51,7 +51,7 @@ namespace BusinessService.Controllers
         // PUT: api/DailyBilling/5
         public HttpResponseMessage Put(string id)
         {
-            var Value = Request.Content.ReadAsAsync<DailyBilling>().Result;
+            var Value = Request.Content.ReadAsAsync<DailyBillingDTO>().Result;
             string sMsg = _BLL.Updte(id, Value);
             if (sMsg == "")
                 return Request.CreateResponse(HttpStatusCode.OK);

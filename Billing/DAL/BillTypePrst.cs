@@ -5,23 +5,28 @@ using System.Text;
 using System.Threading.Tasks;
 using IDAL;
 using Model;
+using AutoMapper;
 
 namespace MssqlDAL
 {
     public class BillTypePrst : IBillTypePrst
     {
         private BillingEntities _BillEntities;
+        private IMapper _Mapper;
+
         public BillTypePrst()
         {
             _BillEntities = new BillingEntities();
+            _Mapper = MapperFactory.GetMapper();
         }
 
-        public string Create(BillType v_Value)
+        public string Create(BillTypeDTO v_Value)
         {
             string sMsg = "";
             try
             {
-                _BillEntities.BillType.Add(v_Value);
+                var BillType = _Mapper.Map<BillType>(v_Value);
+                _BillEntities.BillType.Add(BillType);
                 _BillEntities.SaveChanges();
             }
             catch (Exception ex)
@@ -49,19 +54,25 @@ namespace MssqlDAL
             return sMsg;
         }
 
-        public IQueryable<BillType> QueryAll()
+        public IEnumerable<BillTypeDTO> QueryAll()
         {
-            var result = from x in _BillEntities.BillType
+            var QBillType = from x in _BillEntities.BillType
                          select x;
-            return result;
+            var RBillTypeDTO = _Mapper.Map<IEnumerable<BillTypeDTO>>(QBillType);
+            return RBillTypeDTO;
         }
 
-        public BillType QueryByName(string v_Value)
+        public BillTypeDTO QueryByName(string v_Value)
         {
-            var result = (from x in _BillEntities.BillType
+            var QBillType = (from x in _BillEntities.BillType
                           where x.BillTypeName == v_Value
                           select x).FirstOrDefault();
-            return result;
+            BillTypeDTO RBillTypeDTO;
+            if (QBillType == null)
+                RBillTypeDTO = null;
+            else
+                RBillTypeDTO = _Mapper.Map<BillTypeDTO>(QBillType);
+            return RBillTypeDTO;
         }
 
         //public string Update(BillType v_OldValue, BillType v_NewValue)

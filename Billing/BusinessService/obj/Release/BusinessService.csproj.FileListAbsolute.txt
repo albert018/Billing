@@ -68,3 +68,5 @@ D:\Albert\Git\Billing\Billing\BusinessService\bin\zh-Hant\System.Web.Razor.resou
 D:\Albert\Git\Billing\Billing\BusinessService\bin\zh-Hant\System.Web.WebPages.resources.dll
 D:\Albert\Git\Billing\Billing\BusinessService\bin\zh-Hant\System.Web.WebPages.Deployment.resources.dll
 D:\Albert\Git\Billing\Billing\BusinessService\bin\zh-Hant\System.Web.WebPages.Razor.resources.dll
+D:\Albert\Git\Billing\Billing\BusinessService\bin\AutoMapper.dll
+D:\Albert\Git\Billing\Billing\BusinessService\bin\AutoMapper.xml

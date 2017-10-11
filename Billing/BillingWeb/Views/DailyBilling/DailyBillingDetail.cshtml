@@ -1,4 +1,4 @@
-﻿@model Model.DailyBilling
+﻿@model Model.DailyBillingDTO
 
 @{
     Layout = null;
@@ -49,11 +49,17 @@
             </dd>
     
             <dt>
-                @Html.DisplayNameFor(model => model.BillTag)
+                @Html.DisplayNameFor(model => model.BillTags)
             </dt>
-    
             <dd>
-                @Html.DisplayFor(model => model.BillTag)
+                <ul>
+                    @foreach (var x in Model.BillTags)
+                    {
+                        <li>
+                            @x.BillTagName
+                        </li>
+                    }
+                </ul>
             </dd>
     
             <dt>

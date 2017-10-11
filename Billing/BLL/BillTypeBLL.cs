@@ -3,27 +3,35 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Autofac;
 using IDAL;
 using MssqlDAL;
 using Model;
 
 namespace BLL
 {
-    public class BillTypeBLL
+    public class BillTypeBLL:IDisposable
     {
-        IBillTypePrst _DAL = Factory.GetBillTypePrst();
+        ILifetimeScope _Scope;
+        IBillTypePrst _DAL;
 
-        public string Create(BillType v_Value)
+        public BillTypeBLL()
+        {
+            _Scope = Factory.GetLifetimeScope();
+            _DAL = _Scope.Resolve<IBillTypePrst>();
+        }
+
+        public string Create(BillTypeDTO v_Value)
         {
            return _DAL.Create(v_Value);
         }
 
-        public BillType QueryByName(string v_Value)
+        public BillTypeDTO QueryByName(string v_Value)
         {
             return _DAL.QueryByName(v_Value);
         }
 
-        public IQueryable<BillType> QueryAll()
+        public IEnumerable<BillTypeDTO> QueryAll()
         {
             return _DAL.QueryAll();
         }
@@ -36,6 +44,11 @@ namespace BLL
         public string Delete(string v_Value)
         {
             return _DAL.Delete(v_Value);
+        }
+
+        public void Dispose()
+        {
+            _Scope.Dispose();
         }
     }
 }

@@ -24,23 +24,9 @@ namespace BLL
             _Container = builder.Build();
         }
 
-        public static IBillTagPrst GetBillTagPrst()
+        public static ILifetimeScope GetLifetimeScope()
         {
-            using (var scope = _Container.BeginLifetimeScope())
-            {
-                //return _Container.Resolve<IBillTagPrst>();
-                return scope.Resolve<IBillTagPrst>();
-            }
-        }
-
-        public static IBillTypePrst GetBillTypePrst()
-        {
-            return _Container.Resolve<IBillTypePrst>();
-        }
-
-        public static IDailyBillingPrst GetDailyBillingPrst()
-        {
-            return _Container.Resolve<IDailyBillingPrst>();
+            return _Container.BeginLifetimeScope();
         }
     }
 }

@@ -76,9 +76,14 @@
     <Compile Include="DailyBilling.cs">
       <DependentUpon>Billing.tt</DependentUpon>
     </Compile>
-    <Compile Include="Meta\BillTagMeta.cs" />
-    <Compile Include="Meta\DailyBillingMeta.cs" />
+    <Compile Include="DailyBillingTags.cs">
+      <DependentUpon>Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\BillTagDTO.cs" />
+    <Compile Include="DTO\BillTypeDTO.cs" />
+    <Compile Include="DTO\DailyBillingTagsDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DTO\DailyBillingDTO.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

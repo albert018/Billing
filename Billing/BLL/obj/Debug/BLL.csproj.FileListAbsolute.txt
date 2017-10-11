@@ -14,3 +14,5 @@ D:\Albert\Git\Billing\Billing\BLL\bin\Debug\EntityFramework.xml
 D:\Albert\Git\Billing\Billing\BLL\bin\Debug\zh-Hant\EntityFramework.resources.dll
 D:\Albert\Git\Billing\Billing\BLL\bin\Debug\Autofac.dll
 D:\Albert\Git\Billing\Billing\BLL\bin\Debug\Autofac.xml
+D:\Albert\Git\Billing\Billing\BLL\bin\Debug\AutoMapper.dll
+D:\Albert\Git\Billing\Billing\BLL\bin\Debug\AutoMapper.xml

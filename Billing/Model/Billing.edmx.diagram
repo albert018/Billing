@@ -8,6 +8,7 @@
         <EntityTypeShape EntityType="BillingModel.BillTag" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="BillingModel.BillType" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="BillingModel.DailyBilling" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BillingModel.DailyBillingTags" Width="1.5" PointX="3.375" PointY="2.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

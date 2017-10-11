@@ -20,12 +20,20 @@
     <Property Name="BillDate" Type="DateTime" Precision="0" />
     <Property Name="Amount" Type="Decimal" Precision="14" Scale="4" />
     <Property Name="BillType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-    <Property Name="BillTag" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
     <Property Name="Remark" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityContainer Name="BillingEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="BillTag" EntityType="Self.BillTag" />
     <EntitySet Name="BillType" EntityType="Self.BillType" />
     <EntitySet Name="DailyBilling" EntityType="Self.DailyBilling" />
+    <EntitySet Name="DailyBillingTags" EntityType="BillingModel.DailyBillingTags" />
   </EntityContainer>
+  <EntityType Name="DailyBillingTags">
+    <Key>
+      <PropertyRef Name="Serial" />
+      <PropertyRef Name="BillTagName" />
+    </Key>
+    <Property Name="Serial" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="false" />
+    <Property Name="BillTagName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
 </Schema>

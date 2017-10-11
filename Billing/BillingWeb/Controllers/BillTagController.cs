@@ -30,7 +30,7 @@ namespace BillingWeb.Controllers
                 client.BaseAddress = new Uri(_sApiAddress);
                 var response = client.GetAsync(_sApiURI).Result;
                 if (response.IsSuccessStatusCode)
-                    return View("BillTagIndex", response.Content.ReadAsAsync<IEnumerable<BillTag>>().Result);
+                    return View("BillTagIndex", response.Content.ReadAsAsync<IEnumerable<BillTagDTO>>().Result);
                 else
                     return View("Error", Helper.GetHandleErrorInfo(response, "BillTag", "Index"));
             }
@@ -44,7 +44,7 @@ namespace BillingWeb.Controllers
                 client.BaseAddress = new Uri(_sApiAddress);
                 var response = client.GetAsync(string.Format(_sApiURI+ "/{0}",id)).Result;
                 if (response.IsSuccessStatusCode)
-                    return View("BillTagDetail", response.Content.ReadAsAsync<BillTag>().Result);
+                    return View("BillTagDetail", response.Content.ReadAsAsync<BillTagDTO>().Result);
                 else
                     return View("Error", Helper.GetHandleErrorInfo(response, "BillTag", "Details"));
             }
@@ -58,7 +58,7 @@ namespace BillingWeb.Controllers
 
         // POST: BillTag/Create
         [HttpPost]
-        public ActionResult Create(BillTag v_Value)
+        public ActionResult Create(BillTagDTO v_Value)
         {
             using (var client = new HttpClient())
             {

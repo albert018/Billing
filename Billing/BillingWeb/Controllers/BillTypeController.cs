@@ -17,7 +17,7 @@ namespace BillingWeb.Controllers
         public BillTypeController()
         {
             _sApiAddress = Helper.GetConfig(Helper.ConfigName.WebAPI);
-            _sApiURI = Helper.GetConfig(Helper.ConfigName.ApiURI) + "/BillType";
+            _sApiURI = Helper.GetConfig(Helper.ConfigName.ApiURI) + "/BillTypeDTO";
         }
 
         // GET: BillType
@@ -28,7 +28,7 @@ namespace BillingWeb.Controllers
                 client.BaseAddress = new Uri(_sApiAddress);
                 var response = client.GetAsync(_sApiURI).Result;
                 if (response.IsSuccessStatusCode)
-                    return View("BillTypeIndex", response.Content.ReadAsAsync<IEnumerable<BillType>>().Result);
+                    return View("BillTypeIndex", response.Content.ReadAsAsync<IEnumerable<BillTypeDTO>>().Result);
                 else
                     return View("Error", Helper.GetHandleErrorInfo(response, "BillType", "Index"));
             }
@@ -42,7 +42,7 @@ namespace BillingWeb.Controllers
                 client.BaseAddress = new Uri(_sApiAddress);
                 var response = client.GetAsync(string.Format(_sApiURI + "/{0}",id)).Result;
                 if (response.IsSuccessStatusCode)
-                    return View("BillTypeDetail", response.Content.ReadAsAsync<BillType>().Result);
+                    return View("BillTypeDetail", response.Content.ReadAsAsync<BillTypeDTO>().Result);
                 else
                     return View("Error", Helper.GetHandleErrorInfo(response, "BillType", "Details"));
             }
@@ -55,7 +55,7 @@ namespace BillingWeb.Controllers
 
         // GET: BillType/Create
         [HttpPost]
-        public ActionResult Create(BillType v_Value)
+        public ActionResult Create(BillTypeDTO v_Value)
         {
             using (var client = new HttpClient())
             {

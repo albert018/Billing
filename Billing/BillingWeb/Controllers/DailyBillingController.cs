@@ -28,7 +28,7 @@ namespace BillingWeb.Controllers
                 client.BaseAddress = new Uri(_sApiAddress);
                 var response = client.GetAsync(_sApiURI).Result;
                 if (response.IsSuccessStatusCode)
-                    return View("DailyBillingIndex", response.Content.ReadAsAsync<IEnumerable<DailyBilling>>().Result);
+                    return View("DailyBillingIndex", response.Content.ReadAsAsync<IEnumerable<DailyBillingDTO>>().Result);
                 else
                     return View("Error", Helper.GetHandleErrorInfo(response, "DailyBilling", "Index"));
             }
@@ -42,7 +42,7 @@ namespace BillingWeb.Controllers
                 client.BaseAddress = new Uri(_sApiAddress);
                 var response = client.GetAsync(string.Format(_sApiURI+ "/{0}", id)).Result;
                 if (response.IsSuccessStatusCode)
-                    return View("DailyBillingDetail", response.Content.ReadAsAsync<DailyBilling>().Result);
+                    return View("DailyBillingDetail", response.Content.ReadAsAsync<DailyBillingDTO>().Result);
                 else
                     return View("Error", Helper.GetHandleErrorInfo(response, "DailyBilling", "Details"));
             }
@@ -56,12 +56,12 @@ namespace BillingWeb.Controllers
 
         // POST: DailyBilling/Create
         [HttpPost]
-        public ActionResult Create(DailyBilling v_Value)
+        public ActionResult Create(DailyBillingDTO v_Value)
         {
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri(_sApiAddress);
-                var response = client.PostAsJsonAsync<DailyBilling>(_sApiURI, v_Value).Result;
+                var response = client.PostAsJsonAsync(_sApiURI, v_Value).Result;
                 if(response.IsSuccessStatusCode)
                     return RedirectToAction("Index");
                 else
@@ -77,7 +77,7 @@ namespace BillingWeb.Controllers
                 client.BaseAddress = new Uri(_sApiAddress);
                 var response = client.GetAsync(string.Format(_sApiURI + "/{0}", id)).Result;
                 if (response.IsSuccessStatusCode)
-                    return View("DailyBillingEdit", response.Content.ReadAsAsync<DailyBilling>().Result);
+                    return View("DailyBillingEdit", response.Content.ReadAsAsync<DailyBillingDTO>().Result);
                 else
                     return View("Error", Helper.GetHandleErrorInfo(response, "DailyBilling", "Edit(Get)"));
             }
@@ -85,12 +85,12 @@ namespace BillingWeb.Controllers
 
         // POST: DailyBilling/Edit/5
         [HttpPost]
-        public ActionResult Edit(string id, DailyBilling v_Value)
+        public ActionResult Edit(string id, DailyBillingDTO v_Value)
         {
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri(_sApiAddress);
-                var response = client.PutAsJsonAsync<DailyBilling>(string.Format(_sApiURI+ "/{0}",id), v_Value).Result;
+                var response = client.PutAsJsonAsync<DailyBillingDTO>(string.Format(_sApiURI+ "/{0}",id), v_Value).Result;
                 if(response.IsSuccessStatusCode)
                     return RedirectToAction("Index");
                 else

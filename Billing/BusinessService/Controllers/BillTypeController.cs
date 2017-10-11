@@ -34,7 +34,7 @@ namespace BusinessService.Controllers
         }
 
         // POST: api/BillType
-        public HttpResponseMessage Post(BillType Value)
+        public HttpResponseMessage Post(BillTypeDTO Value)
         {
             string sMsg = _BLL.Create(Value);
             if (sMsg == "")

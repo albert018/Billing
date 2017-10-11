@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Model.DailyBilling>
+﻿@model IEnumerable<Model.DailyBillingDTO>
 
 @{
     Layout = null;
@@ -27,7 +27,7 @@
                 @Html.DisplayNameFor(x => x.BillType);
             </th>
             <th>
-                @Html.DisplayNameFor(x => x.BillTag);
+                @Html.DisplayNameFor(x => x.BillTags);
             </th>
             <th>
                 @Html.DisplayNameFor(x => x.Remark);
@@ -49,7 +49,15 @@
                     @x.BillType;
                 </td>
                 <td>
-                    @x.BillTag;
+                    @{
+                        if(x.BillTags != null)
+                        {
+                            foreach (var y in x.BillTags)
+                            {
+                                Html.Display(y.BillTagName + " , ");
+                            }
+                        }
+                    }
                 </td>
                 <td>
                     @x.Remark;

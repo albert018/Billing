@@ -18,7 +18,6 @@ namespace Model
         public Nullable<System.DateTime> BillDate { get; set; }
         public Nullable<decimal> Amount { get; set; }
         public string BillType { get; set; }
-        public string BillTag { get; set; }
         public string Remark { get; set; }
     }
 }

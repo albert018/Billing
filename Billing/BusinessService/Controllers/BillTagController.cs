@@ -35,7 +35,7 @@ namespace BusinessService.Controllers
         }
 
         // POST api/<controller>
-        public HttpResponseMessage Post(BillTag Value)
+        public HttpResponseMessage Post(BillTagDTO Value)
         {
             string sMsg = _BillTag.Create(Value);
             if (sMsg == "")

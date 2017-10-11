@@ -14,3 +14,5 @@ D:\Albert\Git\Billing\Billing\BLL\obj\Release\BLL.dll
 D:\Albert\Git\Billing\Billing\BLL\obj\Release\BLL.pdb
 D:\Albert\Git\Billing\Billing\BLL\bin\Release\Autofac.dll
 D:\Albert\Git\Billing\Billing\BLL\bin\Release\Autofac.xml
+D:\Albert\Git\Billing\Billing\BLL\bin\Release\AutoMapper.dll
+D:\Albert\Git\Billing\Billing\BLL\bin\Release\AutoMapper.xml

@@ -14,3 +14,7 @@ D:\Albert\Git\Billing\Billing\DAL\bin\Debug\MssqlDAL.dll
 D:\Albert\Git\Billing\Billing\DAL\bin\Debug\MssqlDAL.pdb
 D:\Albert\Git\Billing\Billing\DAL\obj\Debug\MssqlDAL.dll
 D:\Albert\Git\Billing\Billing\DAL\obj\Debug\MssqlDAL.pdb
+D:\Albert\Git\Billing\Billing\DAL\bin\Debug\AutoMapper.dll
+D:\Albert\Git\Billing\Billing\DAL\bin\Debug\AutoMapper.xml
+D:\Albert\Git\Billing\Billing\DAL\bin\Debug\Autofac.dll
+D:\Albert\Git\Billing\Billing\DAL\bin\Debug\Autofac.xml

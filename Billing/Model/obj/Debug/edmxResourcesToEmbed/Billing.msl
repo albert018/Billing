@@ -22,8 +22,15 @@
           <ScalarProperty Name="BillDate" ColumnName="BillDate" />
           <ScalarProperty Name="Amount" ColumnName="Amount" />
           <ScalarProperty Name="BillType" ColumnName="BillType" />
-          <ScalarProperty Name="BillTag" ColumnName="BillTag" />
           <ScalarProperty Name="Remark" ColumnName="Remark" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DailyBillingTags">
+      <EntityTypeMapping TypeName="BillingModel.DailyBillingTags">
+        <MappingFragment StoreEntitySet="DailyBillingTags">
+          <ScalarProperty Name="BillTagName" ColumnName="BillTagName" />
+          <ScalarProperty Name="Serial" ColumnName="Serial" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

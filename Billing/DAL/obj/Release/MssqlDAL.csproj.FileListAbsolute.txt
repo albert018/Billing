@@ -14,3 +14,7 @@ D:\Albert\Git\Billing\Billing\DAL\bin\Release\zh-Hant\EntityFramework.SqlServer.
 D:\Albert\Git\Billing\Billing\DAL\obj\Release\MssqlDAL.csprojResolveAssemblyReference.cache
 D:\Albert\Git\Billing\Billing\DAL\obj\Release\MssqlDAL.dll
 D:\Albert\Git\Billing\Billing\DAL\obj\Release\MssqlDAL.pdb
+D:\Albert\Git\Billing\Billing\DAL\bin\Release\Autofac.dll
+D:\Albert\Git\Billing\Billing\DAL\bin\Release\AutoMapper.dll
+D:\Albert\Git\Billing\Billing\DAL\bin\Release\Autofac.xml
+D:\Albert\Git\Billing\Billing\DAL\bin\Release\AutoMapper.xml

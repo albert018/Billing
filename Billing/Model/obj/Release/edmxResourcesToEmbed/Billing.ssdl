@@ -20,12 +20,20 @@
     <Property Name="BillDate" Type="date" />
     <Property Name="Amount" Type="decimal" Precision="14" Scale="4" />
     <Property Name="BillType" Type="nvarchar" MaxLength="20" />
-    <Property Name="BillTag" Type="nvarchar" MaxLength="20" />
     <Property Name="Remark" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="DailyBillingTags">
+    <Key>
+      <PropertyRef Name="Serial" />
+      <PropertyRef Name="BillTagName" />
+    </Key>
+    <Property Name="Serial" Type="varchar" MaxLength="36" Nullable="false" />
+    <Property Name="BillTagName" Type="nvarchar" MaxLength="20" Nullable="false" />
   </EntityType>
   <EntityContainer Name="BillingModelStoreContainer">
     <EntitySet Name="BillTag" EntityType="Self.BillTag" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="BillType" EntityType="Self.BillType" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DailyBilling" EntityType="Self.DailyBilling" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DailyBillingTags" EntityType="Self.DailyBillingTags" Schema="dbo" store:Type="Tables" />
   </EntityContainer>
 </Schema>

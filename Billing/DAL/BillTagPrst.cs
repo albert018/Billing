@@ -5,23 +5,28 @@ using System.Text;
 using System.Threading.Tasks;
 using IDAL;
 using Model;
+using AutoMapper;
 
 namespace MssqlDAL
 {
     public class BillTagPrst : IBillTagPrst
     {
         private BillingEntities _BillEntities;
+        private IMapper _Mapper;
+
         public BillTagPrst()
         {
             _BillEntities = new BillingEntities();
+            _Mapper = MapperFactory.GetMapper();
         }
 
-        public string Create(BillTag v_Value)
+        public string Create(BillTagDTO v_Value)
         {
             string sMsg = "";
             try
             {
-                _BillEntities.BillTag.Add(v_Value);
+                var BillTag = _Mapper.Map<BillTag>(v_Value);
+                _BillEntities.BillTag.Add(BillTag);
                 _BillEntities.SaveChanges();
             }
             catch (Exception ex)
@@ -49,19 +54,26 @@ namespace MssqlDAL
             return sMsg;
         }
 
-        public IQueryable<BillTag> QueryAll()
+        public IEnumerable<BillTagDTO> QueryAll()
         {
-            var result = from x in _BillEntities.BillTag
+            var QBillTag = from x in _BillEntities.BillTag
                          select x;
-            return result;
+            var RBillTagDTO = _Mapper.Map<IEnumerable<BillTagDTO>>(QBillTag);
+            return RBillTagDTO;
         }
 
-        public BillTag QueryByName(string v_Value)
+        public BillTagDTO QueryByName(string v_Value)
         {
-            var result = (from x in _BillEntities.BillTag
+            var QBillTag = (from x in _BillEntities.BillTag
                           where x.BillTagName == v_Value
                           select x).FirstOrDefault();
-            return result;
+            BillTagDTO RBillTagDTO;
+
+            if (QBillTag == null)
+                RBillTagDTO = null;
+            else
+                RBillTagDTO = _Mapper.Map<BillTagDTO>(QBillTag);
+            return RBillTagDTO;
         }
     }
 }
