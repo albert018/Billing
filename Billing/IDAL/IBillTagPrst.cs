@@ -9,9 +9,9 @@ namespace IDAL
 {
     public interface IBillTagPrst
     {
-        string Create(BillTagDTO v_Value);
-        BillTagDTO QueryByName(string v_Value);
-        IEnumerable<BillTagDTO> QueryAll();
+        string Create(BillTag v_Value);
+        BillTag QueryByName(string v_Value);
+        IEnumerable<BillTag> QueryAll();
         //string Update(string v_sBillTagName, BillTag v_NewValue);
         string Delete(string v_Value);
     }

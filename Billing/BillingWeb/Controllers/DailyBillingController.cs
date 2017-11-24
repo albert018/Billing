@@ -87,11 +87,13 @@ namespace BillingWeb.Controllers
         [HttpPost]
         public ActionResult Edit(string id, DailyBillingDTO v_Value)
         {
+            if (!ModelState.IsValid)
+                return View("DailyBillingEdit");
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri(_sApiAddress);
-                var response = client.PutAsJsonAsync<DailyBillingDTO>(string.Format(_sApiURI+ "/{0}",id), v_Value).Result;
-                if(response.IsSuccessStatusCode)
+                var response = client.PutAsJsonAsync<DailyBillingDTO>(string.Format(_sApiURI + "/{0}", id), v_Value).Result;
+                if (response.IsSuccessStatusCode)
                     return RedirectToAction("Index");
                 else
                     return View("Error", Helper.GetHandleErrorInfo(response, "DailyBilling", "Edit(Post)"));

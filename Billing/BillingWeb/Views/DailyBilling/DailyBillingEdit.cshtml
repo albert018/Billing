@@ -6,16 +6,28 @@
 
 <!DOCTYPE html>
 
-<html>
+<html ng-app="DailyBillingEdit">
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>DailyBillingEdit</title>
-</head>
-<body>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/angularjs")
+    <script>
+        var scope = angular.module("DailyBillingEdit", []);
+
+        scope.controller("mainCont", function cont() {
+            var main= this;
+            main.NgModel=@Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.BillTags));
     
-    
+            main.Add= function(){
+                var t= {Serial: "",BillTagName: "C"};
+                main.NgModel.push(t);
+            };
+        });
+    </script>
+</head>
+<body ng-controller="mainCont as main">
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
@@ -35,7 +47,7 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.BillDate, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.BillDate, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.TextBoxFor(model => model.BillDate, "{0:yyyy-MM-dd}", new { @type= "date" } )
                     @Html.ValidationMessageFor(model => model.BillDate, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -56,18 +68,20 @@
                 </div>
             </div>
     
-            <div class="form-group">
+            <div class="form-group" >
                 @Html.LabelFor(model => model.BillTags, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @foreach (var x in Model.BillTags)
+                @*<div class="col-md-10">
+                    @for (int i = 0; i < Model.BillTags.Count(); i++)
                     {
-                        @Html.Editor(x.BillTagName);
-                        /*
-                        @Html.EditorFor(model => model.BillTag, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.BillTag, "", new { @class = "text-danger" })
-                        */
+                        @Html.EditorFor(model => model.BillTags);
+                        <br/>
                     }
+                </div>*@
+                <div ng-repeat="item in main.NgModel">
+                    <input type="text" name="BillTags[{{$index}}].BillTagName" ng-model="item.BillTagName" />
+                    @Html.ValidationMessageFor(model => model.BillTags.First().BillTagName);
                 </div>
+                <input type="button" value="Add" ng-click="main.Add();" />
             </div>
     
             <div class="form-group">

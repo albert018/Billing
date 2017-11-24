@@ -59,10 +59,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DailyBillingTagsPrst.cs" />
     <Compile Include="BillTagPrst.cs" />
     <Compile Include="BillTypePrst.cs" />
     <Compile Include="DailyBillingPrst.cs" />
-    <Compile Include="MapperFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

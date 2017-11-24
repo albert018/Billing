@@ -7,43 +7,64 @@ using Autofac;
 using Model;
 using IDAL;
 using MssqlDAL;
+using AutoMapper;
 
 namespace BLL
 {
     public class DailyBillingBLL:IDisposable
     {
         ILifetimeScope _Scope;
-        IDailyBillingPrst _DAL;
+        IMapper _Mapper;
+        IDailyBillingPrst _DailyBilling;
+        IDailyBillingTagsPrst _DailyBillingTags;
 
         public DailyBillingBLL()
         {
             _Scope = Factory.GetLifetimeScope();
-            _DAL = _Scope.Resolve<IDailyBillingPrst>();
+            _Mapper = Factory.GetMapper();
+            _DailyBilling = _Scope.Resolve<IDailyBillingPrst>();
+            _DailyBillingTags = _Scope.Resolve<IDailyBillingTagsPrst>();
         }
 
         public string Create(DailyBillingDTO v_Value)
         {
-            return _DAL.Create(v_Value);
+            string sMsg = "";
+            var DailyBilling = _Mapper.Map<DailyBilling>(v_Value);
+            var DailyBillingTags = _Mapper.Map<IEnumerable<DailyBillingTags>>(v_Value.BillTags);
+            sMsg = _DailyBilling.Create(DailyBilling);
+            sMsg += _DailyBillingTags.Create(DailyBillingTags);
+            return sMsg;
         }
 
         public DailyBillingDTO QueryByName(string v_Value)
         {
-            return _DAL.QueryByName(v_Value);
+            var R = _Mapper.Map<DailyBillingDTO>(_DailyBilling.QueryByName(v_Value));
+            R.BillTags = _Mapper.Map<IEnumerable<DailyBillingTagsDTO>>(_DailyBillingTags.QueryByName(v_Value));
+            return R;
         }
 
         public IEnumerable<DailyBillingDTO> QueryAll()
         {
-            return _DAL.QueryAll();
+            return _Mapper.Map<IEnumerable<DailyBillingDTO>>(_DailyBilling.QueryAll());
         }
 
-        public string Updte(string v_sKey, DailyBillingDTO v_NewValue)
+        public string Update(DailyBillingDTO v_Value)
         {
-            return _DAL.Update(v_sKey, v_NewValue);
+            string sMsg = "";
+            var DailyBilling = _Mapper.Map<DailyBilling>(v_Value);
+            var DailyBillingTags = _Mapper.Map<IEnumerable<DailyBillingTags>>(v_Value.BillTags);
+            sMsg = _DailyBilling.Update(DailyBilling);
+            sMsg += _DailyBillingTags.Delete(DailyBillingTags.First().Serial);
+            sMsg += _DailyBillingTags.Create(DailyBillingTags);
+            return sMsg;
         }
 
         public string Delete(string v_Value)
         {
-            return _DAL.Delete(v_Value);
+            string sMsg = "";
+            sMsg = _DailyBilling.Delete(v_Value);
+            sMsg += _DailyBillingTags.Delete(v_Value);
+            return sMsg;
         }
 
         public void Dispose()

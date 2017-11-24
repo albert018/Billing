@@ -9,10 +9,10 @@ namespace IDAL
 {
     public interface IDailyBillingPrst
     {
-        string Create(DailyBillingDTO v_Value);
-        DailyBillingDTO QueryByName(string v_Value);
-        IEnumerable<DailyBillingDTO> QueryAll();
-        string Update(string v_Key, DailyBillingDTO v_NewValue);
+        string Create(DailyBilling v_Value);
+        DailyBilling QueryByName(string v_Value);
+        IEnumerable<DailyBilling> QueryAll();
+        string Update(DailyBilling v_NewValue);
         string Delete(string v_Value);
     }
 }

@@ -5,28 +5,24 @@ using System.Text;
 using System.Threading.Tasks;
 using IDAL;
 using Model;
-using AutoMapper;
 
 namespace MssqlDAL
 {
     public class BillTypePrst : IBillTypePrst
     {
         private BillingEntities _BillEntities;
-        private IMapper _Mapper;
 
         public BillTypePrst()
         {
             _BillEntities = new BillingEntities();
-            _Mapper = MapperFactory.GetMapper();
         }
 
-        public string Create(BillTypeDTO v_Value)
+        public string Create(BillType v_Value)
         {
             string sMsg = "";
             try
             {
-                var BillType = _Mapper.Map<BillType>(v_Value);
-                _BillEntities.BillType.Add(BillType);
+                _BillEntities.BillType.Add(v_Value);
                 _BillEntities.SaveChanges();
             }
             catch (Exception ex)
@@ -54,25 +50,19 @@ namespace MssqlDAL
             return sMsg;
         }
 
-        public IEnumerable<BillTypeDTO> QueryAll()
+        public IEnumerable<BillType> QueryAll()
         {
             var QBillType = from x in _BillEntities.BillType
                          select x;
-            var RBillTypeDTO = _Mapper.Map<IEnumerable<BillTypeDTO>>(QBillType);
-            return RBillTypeDTO;
+            return QBillType;
         }
 
-        public BillTypeDTO QueryByName(string v_Value)
+        public BillType QueryByName(string v_Value)
         {
             var QBillType = (from x in _BillEntities.BillType
                           where x.BillTypeName == v_Value
                           select x).FirstOrDefault();
-            BillTypeDTO RBillTypeDTO;
-            if (QBillType == null)
-                RBillTypeDTO = null;
-            else
-                RBillTypeDTO = _Mapper.Map<BillTypeDTO>(QBillType);
-            return RBillTypeDTO;
+            return QBillType;
         }
 
         //public string Update(BillType v_OldValue, BillType v_NewValue)

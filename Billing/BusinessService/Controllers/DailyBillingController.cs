@@ -52,7 +52,11 @@ namespace BusinessService.Controllers
         public HttpResponseMessage Put(string id)
         {
             var Value = Request.Content.ReadAsAsync<DailyBillingDTO>().Result;
-            string sMsg = _BLL.Updte(id, Value);
+            foreach (var item in Value.BillTags)
+            {
+                item.Serial = Value.Serial;
+            }
+            string sMsg = _BLL.Update(Value);
             if (sMsg == "")
                 return Request.CreateResponse(HttpStatusCode.OK);
             else

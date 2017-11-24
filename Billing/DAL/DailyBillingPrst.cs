@@ -3,33 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity;
 using IDAL;
 using Model;
-using AutoMapper;
 
 namespace MssqlDAL
 {
     public class DailyBillingPrst : IDailyBillingPrst
     {
         private BillingEntities _entities;
-        private IMapper _Mapper;
 
         public DailyBillingPrst()
         {
             _entities = new BillingEntities();
-            _Mapper = MapperFactory.GetMapper();
         }
 
-        public string Create(DailyBillingDTO v_Value)
+        public string Create(DailyBilling v_DailyBilling)
         {
             string sMsg = "";
             try
             {
-                var DailyBilling = _Mapper.Map<DailyBilling>(v_Value);
-                var DailyBillingTags = _Mapper.Map<IEnumerable<DailyBillingTags>>(v_Value.BillTags);
 
-                _entities.DailyBilling.Add(DailyBilling);
-                _entities.DailyBillingTags.AddRange(DailyBillingTags);
+                _entities.DailyBilling.Add(v_DailyBilling);
                 _entities.SaveChanges();
             }
             catch (Exception ex)
@@ -57,15 +52,14 @@ namespace MssqlDAL
             return sMsg;
         }
 
-        public IEnumerable<DailyBillingDTO> QueryAll()
+        public IEnumerable<DailyBilling> QueryAll()
         {
             var QDailyBilling = (from x in _entities.DailyBilling
                          select x);
-            var RDailiBilling = _Mapper.Map<IEnumerable<DailyBillingDTO>>(QDailyBilling);
-            return RDailiBilling;
+            return QDailyBilling;
         }
 
-        public DailyBillingDTO QueryByName(string v_Value)
+        public DailyBilling QueryByName(string v_Value)
         {
             ////deal with DailyBilling
             //var QDailyBilling = (from x in _entities.DailyBilling
@@ -81,49 +75,60 @@ namespace MssqlDAL
             //RDailyBilling.BillTags = RDailyBillingTags;
 
             //to avoid connect to the SQL two times, so combine together
-            var QDailyBilling = (from x in _entities.DailyBilling
-                                 where x.Serial == v_Value
-                                select new
-                                {
-                                    DailyBilling = x,
-                                    DailyBillingTags = (from y in _entities.DailyBillingTags
-                                                        where y.Serial == x.Serial
-                                                        select y)
-                                }).FirstOrDefault();
-            DailyBillingDTO RDailyBilling ;
+            //var QDailyBilling = (from x in _entities.DailyBilling
+            //                     where x.Serial == v_Value
+            //                    select new
+            //                    {
+            //                        DailyBilling = x,
+            //                        DailyBillingTags = (from y in _entities.DailyBillingTags
+            //                                            where y.Serial == x.Serial
+            //                                            select y)
+            //                    }).FirstOrDefault();
+            //DailyBillingDTO RDailyBilling ;
 
-            if (QDailyBilling == null)
-                RDailyBilling = null;
-            else
-            {
-                RDailyBilling = _Mapper.Map<DailyBillingDTO>(QDailyBilling.DailyBilling);
-                RDailyBilling.BillTags = _Mapper.Map<IEnumerable<DailyBillingTagsDTO>>(QDailyBilling.DailyBillingTags);
-            }
+            //if (QDailyBilling == null)
+            //    RDailyBilling = null;
+            //else
+            //{
+            //    RDailyBilling = _Mapper.Map<DailyBillingDTO>(QDailyBilling.DailyBilling);
+            //    RDailyBilling.BillTags = _Mapper.Map<IEnumerable<DailyBillingTagsDTO>>(QDailyBilling.DailyBillingTags);
+            //}
+
+            var Q = (from x in _entities.DailyBilling
+                     where x.Serial == v_Value
+                     select x).FirstOrDefault();
             
-            return RDailyBilling;
+            return Q;
         }
 
-        public string Update(string v_Key, DailyBillingDTO v_NewValue)
+        public string Update(DailyBilling v_DailyBilling)
         {
             string sMsg = "";
             try
             {
                 //deal with DailyBilling
-                var Billing = (from x in _entities.DailyBilling
-                               where x.Serial == v_Key
-                               select x).First();
-                var NewBilling = _Mapper.Map<DailyBilling>(v_NewValue);
+                //var Billing = (from x in _entities.DailyBilling
+                //               where x.Serial == v_Key
+                //               select x).First();
+                //var NewBilling = _Mapper.Map<DailyBilling>(v_NewValue);
 
                 //deal with DailyBillingTags
-                var Tags = from x in _entities.DailyBillingTags
-                           where x.Serial == v_Key
-                           select x;
-                var NewTags = _Mapper.Map<IEnumerable<DailyBillingTags>>(v_NewValue.BillTags);
+                //var Tags = from x in _entities.DailyBillingTags
+                //           where x.Serial == v_Key
+                //           select x;
+                //var NewTags = _Mapper.Map<IEnumerable<DailyBillingTags>>(v_NewValue.BillTags);
 
-                _entities.DailyBilling.Remove(Billing);
-                _entities.DailyBillingTags.RemoveRange(Tags);
-                _entities.DailyBilling.Add(NewBilling);
-                _entities.DailyBillingTags.AddRange(NewTags);
+                //_entities.DailyBilling.Remove(Billing);
+                //_entities.DailyBillingTags.RemoveRange(Tags);
+                //_entities.DailyBilling.Add(NewBilling);
+                //_entities.DailyBillingTags.AddRange(NewTags);
+                //_entities.SaveChanges();
+
+                var Tags = from x in _entities.DailyBillingTags
+                            where x.Serial == v_DailyBilling.Serial
+                            select x;
+
+                _entities.Entry<DailyBilling>(v_DailyBilling).State = EntityState.Modified;
                 _entities.SaveChanges();
             }
             catch (Exception ex)

@@ -13,6 +13,8 @@ namespace Model
         public string Serial { get; set; }
 
         [Display(Name = "標籤名稱")]
+        [MaxLength(4,ErrorMessage ="長度不可超過4")]
+        [MinLength(1,ErrorMessage ="長度不可低於1")]
         public string BillTagName { get; set; }
     }
 }
